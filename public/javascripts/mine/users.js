@@ -1,4 +1,5 @@
 function login(){
+  alert('sdfds')
   $$.ajax({
     url: serverIp+'/u/login',
     async:true,
@@ -16,7 +17,3 @@ function login(){
     }
   })
 }
-
-$$('a').on('click', function (e) { 
-   alert('sdfds')
-});
