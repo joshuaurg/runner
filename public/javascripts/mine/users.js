@@ -1,5 +1,4 @@
 function login(){
-
   $$.ajax({
     url: serverIp+'/u/login',
     async:true,
@@ -12,9 +11,7 @@ function login(){
     },
     success:function(data, status, xhr){
       if(status==200){
-        alert('11111')
           mainView.router.loadPage('/users/home');
-          alert('11111')
       }
     }
   })
