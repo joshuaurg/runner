@@ -14,12 +14,19 @@ function viewAlbumPhotos(id){
       if(status==200){
         console.log(data)
         var photos = [];
-        for(var item in data) {
-          photos[item] = data[item].url;
+        for(var i in data) {
+          var item = {};
+          item.url = data[i].url;
+          item.caption = data[i].remark;
+          photos[i] = item;
         }
         var myPhotoBrowser = myApp.photoBrowser({
             zoom: 400,
-            photos: photos
+            photos: photos,
+            backLinkText:'返回',
+            ofText:'/',
+            theme: 'dark',
+            type: 'standalone'
         });   
         myPhotoBrowser.open();
       }
