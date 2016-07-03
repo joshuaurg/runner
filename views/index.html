@@ -12,6 +12,20 @@
     <link rel="stylesheet" href="/stylesheets/framework7.ios.min.css">
     <!-- Path to Framework7 iOS related color styles -->
     <link rel="stylesheet" href="/stylesheets/framework7.ios.colors.min.css">
+    <style type="text/css">
+      .swiper-container {
+        height: 100%;
+      }
+      .swiper-slide {
+        background:#fff;
+      }
+      .swiper-slide span {
+        text-align:center;
+        display:block;
+        margin:20px;
+        font-size:21px;
+      }
+    </style>
   </head>
   <body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -32,15 +46,31 @@
         <div class="navbar">
           <div class="navbar-inner">
               <div class="center">记忆盒子</div>
+              <div class="right"> <a href="/users/home">走进回忆</a></div>
           </div>
         </div>
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
+        <div class="pages">
           <!-- Page, "data-page" contains page name -->
           <div data-page="index" class="page">
             <!-- Scrollable page content -->
             <div class="page-content">
-              <a href="/users/home">走进回忆</a>
+              
+                <!-- Slider -->
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img width='100%' src="http://o8ao1ngw0.bkt.clouddn.com/index_profile_1.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                      <img width='100%' src="http://o8ao1ngw0.bkt.clouddn.com/index_profile_4.jpg">
+                    </div>
+                    <div class="swiper-slide">
+                      <img width='100%' src="http://o8ao1ngw0.bkt.clouddn.com/index_profile_5.jpg">
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
             </div>
           </div>
         </div>
