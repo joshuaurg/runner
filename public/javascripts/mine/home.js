@@ -25,9 +25,6 @@ function viewAlbumPhotos(id){
           photos[i] = item;
         }
         var myPhotoBrowser = myApp.photoBrowser({
-            zoom: true,
-            maxZoom:2,
-            minZoom:2,
             photos: photos,
             backLinkText:'返回',
             ofText:'/',
