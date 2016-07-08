@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/stylesheets/framework7.ios.min.css">
     <!-- Path to Framework7 iOS related color styles -->
     <link rel="stylesheet" href="/stylesheets/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/my-font.css">
     <style type="text/css">
       .swiper-container {
         height: 100%;
@@ -46,31 +48,17 @@
         <div class="navbar">
           <div class="navbar-inner">
               <div class="center">记忆盒子</div>
-              <div class="right"> <a href="/users/home">走进回忆</a></div>
+              <div class="right"> <a href="/users/home">相册</a></div>
           </div>
         </div>
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages">
+        <div class="pages navbar-through toolbar-through">
           <!-- Page, "data-page" contains page name -->
           <div data-page="index" class="page">
             <!-- Scrollable page content -->
             <div class="page-content">
-              
-                <!-- Slider -->
-                <div class="swiper-container">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img width='100%' src="http://o8ao1ngw0.bkt.clouddn.com/index_profile_1.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                      <img width='100%' src="http://o8ao1ngw0.bkt.clouddn.com/index_profile_4.jpg">
-                    </div>
-                    <div class="swiper-slide">
-                      <img width='100%' src="http://o8ao1ngw0.bkt.clouddn.com/index_profile_5.jpg">
-                    </div>
-                  </div>
-                  <div class="swiper-pagination"></div>
-                </div>
+              <i class="fa fa-photo my-fa-photo" aria-hidden="true"></i>
+              <i class="fa fa-video-camera my-video-camera"></i>
             </div>
           </div>
         </div>
@@ -80,6 +68,8 @@
     <script type="text/javascript" src="/javascripts/framework7.min.js"></script>
     <!-- app 初始化 -->
     <script type="text/javascript" src="/javascripts/mine/app.js"></script>
+    <script type="text/javascript" src="/javascripts/utils/sha1.js"></script>
+    <script type="text/javascript" src="/javascripts/utils/signature.js"></script>
     <!-- 用户相关的js（login，用户中心） -->
     <script type="text/javascript" src="/javascripts/mine/users.js"></script>
     <script type="text/javascript" src="/javascripts/mine/home.js"></script>

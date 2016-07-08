@@ -1,9 +1,13 @@
 
 function viewAlbumPhotos(id){
+  var path = '/album/front/album/photo/list';
+  var param = {};
+  param.groupid = id;
+  var signInfo = sign(path,param);
   $$.ajax({
-    url: serverIp+'album/front/album/photo/list',
+    url: serverIp+path,
     async:true,
-    data:{groupid:id},
+    data:signInfo,
     dataType:'json',
     method:'POST',
     crossDomain:true,
@@ -21,7 +25,9 @@ function viewAlbumPhotos(id){
           photos[i] = item;
         }
         var myPhotoBrowser = myApp.photoBrowser({
-            zoom: 400,
+            zoom: true,
+            maxZoom:2,
+            minZoom:2,
             photos: photos,
             backLinkText:'返回',
             ofText:'/',
@@ -35,17 +41,20 @@ function viewAlbumPhotos(id){
 }
 
 $$(document).on('pageInit', '.page[data-page="home"]',function (e) {
+  var path = '/album/front/album/photo/group/list';
+  var signInfo = sign(path,null);
   $$.ajax({
-    url: serverIp+'/album/front/album/photo/group/list',
+    url: serverIp+path,
     async:true,
     dataType:'json',
-    method:'get',
+    method:'post',
+    data:signInfo,
     crossDomain:true,
     error:function(xhr,status){
       console.log(status)
     },
     success:function(data, status, xhr){
-      if(status==200){
+      if(status==200 && data.status != 'error'){
         for(var item in data) {
           var str = "<li class='item-content' onclick='viewAlbumPhotos("+data[item].id+")'>"+
             "<div class='item-media'><img src='"+data[item].profile+"' width='80' height='100'></div>"+
@@ -58,6 +67,8 @@ $$(document).on('pageInit', '.page[data-page="home"]',function (e) {
         "</li>";
           $$("#albumGroupUL").append(str);
         }
+      }else{
+        alert(data)
       }
     }
   })
