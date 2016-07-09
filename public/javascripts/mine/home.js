@@ -55,7 +55,7 @@ $$(document).on('pageInit', '.page[data-page="home"]',function (e) {
       if(status==200 && data.status != 'error'){
         for(var item in data) {
           var str = "<li class='item-content' onclick='viewAlbumPhotos("+data[item].id+")'>"+
-            "<div class='item-media'><img src='"+data[item].profile+"' width='80' height='100'></div>"+
+            "<div class='item-media'><img src='"+data[item].profile+"' width='100' height='100'></div>"+
             "<div class='item-inner'>"+
               "<div class='item-title-row'>"+
                 "<div class='item-title'>"+data[item].name+"</div>"+
