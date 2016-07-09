@@ -2786,7 +2786,7 @@ html.pixel-ratio-3 .list-block .item-link.list-button:after {
 
 .list-block .item-content {
     box-sizing: border-box;
-    padding-left: 15px;
+    padding-left: 5px;
     min-height: 44px;
     display: -webkit-box;
     display: -ms-flexbox;

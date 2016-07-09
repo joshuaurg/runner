@@ -1,0 +1,10 @@
+/*图文列表中 文字子标题的样式补充*/
+.item-subtitle-extra{
+    right: 0px;
+    margin-right: 10px;
+    bottom: 0px;
+    position: absolute!important;
+    font-size:12px!important;
+    color:#b9b9b9;
+    margin-bottom: 10px;
+}

@@ -16,7 +16,6 @@ function viewAlbumPhotos(id){
     },
     success:function(data, status, xhr){
       if(status==200){
-        console.log(data)
         var photos = [];
         for(var i in data) {
           var item = {};
@@ -25,11 +24,13 @@ function viewAlbumPhotos(id){
           photos[i] = item;
         }
         var myPhotoBrowser = myApp.photoBrowser({
+            zoom:false,
             photos: photos,
             backLinkText:'返回',
+            swipeToClose:false,
+            spaceBetween:0,
             ofText:'/',
             theme: 'dark',
-            type: 'standalone'
         });   
         myPhotoBrowser.open();
       }
@@ -59,7 +60,8 @@ $$(document).on('pageInit', '.page[data-page="home"]',function (e) {
               "<div class='item-title-row'>"+
                 "<div class='item-title'>"+data[item].name+"</div>"+
               "</div>"+
-              "<div class='item-subtitle'>"+data[item].creTime+"</div>"+
+              "<div class='item-subtitle'>"+data[item].remark+"</div>"+
+              "<div class='item-subtitle item-subtitle-extra'>创建："+data[item].creTime+"</div>"+
             "</div>"+
         "</li>";
           $$("#albumGroupUL").append(str);
