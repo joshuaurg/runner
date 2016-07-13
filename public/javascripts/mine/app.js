@@ -4,7 +4,7 @@ var myApp = new Framework7();
 // Export selectors engine
 var $$ = Dom7;
 
-var serverIp = "http://123.56.8.162:8080/proz";
+var serverIp = "http://123.56.8.162/proz";
 // var serverIp = "http://localhost:8080/proz";
 
 // Add view
